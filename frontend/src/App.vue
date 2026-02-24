@@ -643,16 +643,22 @@ const teamMembers = [
 const nextMember = () => { currentMemberIndex.value = (currentMemberIndex.value + 1) % teamMembers.length }
 const prevMember = () => { currentMemberIndex.value = (currentMemberIndex.value - 1 + teamMembers.length) % teamMembers.length }
 
+// ... existing imports ...
 
 const notes = ref([])
 const newContract = ref({ name: '', message: '' })
-// Use the local backend address to avoid CORS issues
+
+// IMPORTANT: Added /guestbook to the end of the URL
 const API_URL = 'https://personal-website-finals-ten-dusky.vercel.app/guestbook';
 
 async function fetchNotes() {
   try {
     const response = await fetch(API_URL);
-    if (response.ok) notes.value = await response.json();
+    if (response.ok) {
+      notes.value = await response.json();
+    } else {
+      console.error('Server responded with error:', response.status);
+    }
   } catch (error) { 
     console.error('Failed to fetch contracts:', error); 
   }
@@ -660,7 +666,6 @@ async function fetchNotes() {
 
 async function postContract() {
   try {
-    // FIX: Change the URL to API_URL so it hits your NestJS backend
     const response = await fetch(API_URL, { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -671,8 +676,11 @@ async function postContract() {
     });
 
     if (response.ok) {
-      newContract.value = { name: '', message: '' }; // Clear form
-      await fetchNotes(); // Refresh the list
+      newContract.value = { name: '', message: '' }; 
+      await fetchNotes(); 
+    } else {
+      const errorData = await response.json();
+      console.error('Server Error:', errorData);
     }
   } catch (error) {
     console.error('Witcher Error: Failed to seal contract:', error);

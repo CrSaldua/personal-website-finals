@@ -5,11 +5,10 @@ import { CreateContractDto } from '../dto/create-contract.dto';
 @Injectable()
 export class GuestbookService {
   private supabase = createClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
+    process.env.SUPABASE_URL || '',
+    process.env.SUPABASE_ANON_KEY || ''
   );
 
-  // Moved INSIDE the class
   async findAll() {
     const { data, error } = await this.supabase
       .from('guestbook')
@@ -23,7 +22,6 @@ export class GuestbookService {
     return data;
   }
 
-  // Moved INSIDE the class
   async create(dto: CreateContractDto) {
     const { data, error } = await this.supabase
       .from('guestbook')
@@ -31,9 +29,9 @@ export class GuestbookService {
       .select();
 
     if (error) {
-      console.error('Supabase POST error:', error.message, 'Code:', error.code);
+      console.error('Supabase POST error:', error.message);
       return null;
     }
     return data;
   }
-} // Class correctly ends here
+}
