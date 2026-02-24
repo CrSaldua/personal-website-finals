@@ -1,20 +1,19 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Unified CORS configuration
+  // Enhanced CORS for Vercel deployment
   app.enableCors({
-    origin: '*', 
-    methods: ['GET', 'POST'],
+    origin: [
+      'https://personal-website-finals-tp54.vercel.app',
+      'https://personal-website-finals-ten-dusky.vercel.app',
+      'http://localhost:5173' 
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Accept, Authorization',
   });
 
   const port = process.env.PORT || 3000;
   await app.listen(port);
   console.log(`Witcher backend running on port ${port}`);
 }
-
-bootstrap();
