@@ -458,56 +458,57 @@ body {
   text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
 }
 
-/* Update these specific classes in your style.css */
+/* --- THE SCHOOL SECTION REPAIR --- */
 
 .carousel-container {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 10px;
+  max-width: 1200px; /* Limits the width on ultra-wide screens */
+  margin: 0 auto;
+  position: relative;
+  padding: 0 40px;
 }
 
 .carousel-track {
   display: flex;
-  gap: 20px;
-  padding: 40px 20px;
-  overflow-x: auto; /* Allows swiping on mobile */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  gap: 25px;
+  padding: 40px 10px;
   width: 100%;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none; /* Hides scrollbar on Chrome/Safari */
+  justify-content: center; /* Centers the cards on Desktop */
+  overflow-x: visible; /* Prevents clipping on Desktop */
 }
 
 .team-card {
-  flex: 0 0 200px; /* Prevents cards from disappearing/shrinking */
-  transition: all 0.4s ease;
+  flex: 0 0 180px; /* Keeps the cards at a consistent size */
   cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: grayscale(100%) brightness(0.4);
+  transform: scale(0.9);
+  position: relative;
 }
 
-/* Ensure the arrows don't get covered */
-.nav-arrow {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  transform: translateY(-100%); /* Moves them up slightly to align with images */
-}
+/* --- MOBILE RESPONSIVE FIX --- */
 
-.nav-arrow:first-of-type { left: 5px; }
-.nav-arrow:last-of-type { right: 5px; }
-
-@media (max-width: 768px) {
-  .team-card {
-    flex: 0 0 160px; /* Slightly smaller cards on mobile */
+@media (max-width: 1024px) {
+  .carousel-track {
+    justify-content: flex-start; /* Switch to start-aligned for scrolling */
+    overflow-x: auto; /* Enable scroll/swipe for mobile/tablet */
+    padding-left: 20px;
+    scrollbar-width: none;
   }
   
-  .meet-team-title {
-    font-size: 2rem; /* Shorter title for mobile */
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-container {
+    padding: 0 10px;
+  }
+  
+  .team-card {
+    flex: 0 0 150px; /* Slightly smaller cards for smaller screens */
   }
 }
 
