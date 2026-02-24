@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristian Saldua Resources</title>
+</head>
+<body>
+
+    <h1>Webpage Resources</h1>
+   
+    <p>
+        <strong>My Website Link:</strong> 
+        <a href="https://crsaldua.github.io/webprog-IT242-HTML-Lesson/Your%20Personalized%20Profile%20Website#about">View Profile</a>
+    </p>
+ 
+    <hr>
+ 
+    <ul>
+        <li>
+            <strong>Frontend Tools:</strong> Vue.js, HTML5, CSS3, W3Schools, HTML/CSS Validators
+        </li>
+        <br>
+        <li>
+            <strong>Backend & Logic:</strong> Nest.js, Node.js, NPM (Node Package Manager)
+        </li>
+        <br>
+        <li>
+            <strong>Editor & Version Control:</strong> VS Code, GitHub, Git Desktop
+        </li>
+        <br>
+        <li>
+            <strong>Deployment & AI:</strong> Vercel, Gemini AI
+        </li>
+        <br>
+        <li>
+            <strong>API Testing:</strong> Postman, Thunder Client
+        </li>
+    </ul>
+ 
+</body>
+</html>
