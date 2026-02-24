@@ -56,7 +56,7 @@
               
             </div>
         
-          <p class="text-center">"MOVE THE BAR TO CHANGE THE DIFFICULTY."</p>
+          <p class="text-center">"MOVE THE BAR TO CHANGE THE DIFFICULTY"</p>
 
             <div class="combat-arena">
               <div class="arena-header">
