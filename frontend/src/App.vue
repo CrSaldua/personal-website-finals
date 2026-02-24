@@ -53,6 +53,7 @@
                   <div class="progress-bar-fill" :style="{ width: stat.value + '%' }"></div>
                 </div>
               </div>
+              <p>MOVE THE BAR TO CHANGE THE DIFFICULTY</p>
             </div>
           
 
