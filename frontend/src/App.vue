@@ -9,7 +9,7 @@
     <header class="hero">
       <div class="hero-overlay">
         <div class="portrait-frame">
-          <img src="./assets/ME.jpg" class="profile-img">
+          <img src="./assets/PIC.jpg" class="profile-img">
         </div>
         <h1 class="glow-text">CRISTIAN R. SALDUA</h1>
         <div class="title-divider"></div>
