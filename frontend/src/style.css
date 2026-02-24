@@ -462,43 +462,35 @@ body {
 
 /* --- THE SCHOOL: FIXED STATE-BASED CAROUSEL --- */
 
-/* Container handles the overall framing */
 .carousel-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  position: relative;
+  overflow: hidden; /* Hides the people not in focus */
   padding: 40px 0;
-  overflow: hidden; /* Important: hides the members who are "off-screen" */
-}
-
-/* New wrapper to act as the viewing window */
-.carousel-track-wrapper {
-  width: 100%;
-  max-width: 1000px;
-  overflow: visible;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
 }
 
 .carousel-track {
   display: flex;
-  gap: 20px; /* This 20px is accounted for in the 200px offset in HTML */
+  gap: 20px;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  /* This centers the first member initially */
+  transform: translateX(0); 
   will-change: transform;
 }
 
 .team-card {
-  flex: 0 0 180px; /* Keeps cards exactly 180px so they don't disappear */
+  flex: 0 0 180px; /* Cards will never shrink or disappear */
+  cursor: pointer;
   transition: all 0.5s ease;
   filter: grayscale(100%) brightness(0.3);
-  transform: scale(0.85);
-  opacity: 0.6;
+  transform: scale(0.8);
+  opacity: 0.5;
 }
 
-/* Spotlight effect for the active member */
+/* The selected Witcher gets the spotlight */
 .team-card.active-team {
   filter: grayscale(0%) brightness(1);
   transform: scale(1.1);
@@ -506,25 +498,11 @@ body {
   z-index: 10;
 }
 
-/* Arrows stay fixed on the sides */
-.nav-arrow {
-  position: absolute;
-  z-index: 20;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-arrow:first-of-type { left: 20px; }
-.nav-arrow:last-of-type { right: 20px; }
-
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .carousel-track-wrapper {
-    max-width: 100%;
+  .team-card {
+    flex: 0 0 150px;
   }
-  /* Adjust calculation for smaller mobile cards if necessary */
 }
 
 /* INDIVIDUAL CARDS */
