@@ -647,7 +647,7 @@ const prevMember = () => { currentMemberIndex.value = (currentMemberIndex.value 
 const notes = ref([])
 const newContract = ref({ name: '', message: '' })
 // Use the local backend address to avoid CORS issues
-const API_URL = 'https://personal-website-finals-gray.vercel.app/guestbook';
+const API_URL = 'https://personal-website-finals-ten-dusky.vercel.app';
 
 async function fetchNotes() {
   try {
