@@ -20,13 +20,15 @@
     <section class="cinematic-landscape-section">
       <main class="path-container">
         <nav class="tab-nav">
-          <button class="tab-btn" :class="{ active: activeTab === 'stats' }" @click="activeTab = 'stats'">ATTRIBUTES</button>
-          <button class="tab-btn" :class="{ active: activeTab === 'journal' }" @click="activeTab = 'journal'">THE JOURNAL</button>
-          <button class="tab-btn" :class="{ active: activeTab === 'bestiary' }" @click="activeTab = 'bestiary'">BESTIARY</button>
-          <button class="tab-btn" :class="{ active: activeTab === 'alchemy' }" @click="activeTab = 'alchemy'">ALCHEMY</button>
-          <button class="tab-btn" :class="{ active: activeTab === 'worldmap' }" @click="activeTab = 'worldmap'">WORLD MAP</button>
-          <button class="tab-btn" :class="{ active: activeTab === 'gwent' }" @click="activeTab = 'gwent'">GWENT</button>
-        </nav>
+  <div class="tab-scroll-container">
+    <button class="tab-btn" :class="{ active: activeTab === 'stats' }" @click="activeTab = 'stats'">ATTRIBUTES</button>
+    <button class="tab-btn" :class="{ active: activeTab === 'journal' }" @click="activeTab = 'journal'">JOURNAL</button>
+    <button class="tab-btn" :class="{ active: activeTab === 'bestiary' }" @click="activeTab = 'bestiary'">BESTIARY</button>
+    <button class="tab-btn" :class="{ active: activeTab === 'alchemy' }" @click="activeTab = 'alchemy'">ALCHEMY</button>
+    <button class="tab-btn" :class="{ active: activeTab === 'worldmap' }" @click="activeTab = 'worldmap'">MAP</button>
+    <button class="tab-btn" :class="{ active: activeTab === 'gwent' }" @click="activeTab = 'gwent'">GWENT</button>
+  </div>
+</nav>
 
         <section class="hub-content">
 
@@ -638,7 +640,7 @@ const teamMembers = [
   { name: 'Jared', role: 'DATA ALCHEMIST', rune: 'ᛗ', quote: 'The truth is hidden in the patterns.', desc: 'Expert in transmuting disorganized databases into pure gold.', img: new URL('./assets/jared.jpg', import.meta.url).href },
   { name: 'Charles', role: 'SYSTEMS SCOUT', rune: 'ᛘ', quote: 'Secure the perimeter.', desc: 'Maintains infrastructure.', img: new URL('./assets/charles.jpg', import.meta.url).href },
   { name: 'Rap', role: 'NETWORK RANGER', rune: 'ᚠ', quote: 'Connections are the lifelines.', desc: 'Ensures flow of data.', img: new URL('./assets/rap.jpg', import.meta.url).href },
-  { name: 'KAI', role: 'FRONTEND WITCHER', rune: 'ᛁ', quote: 'Pixels are my clay.', desc: 'Motion arts specialist.', img: new URL('./assets/justine.jpg', import.meta.url).href }
+  { name: 'Justine', role: 'FRONTEND WITCHER', rune: 'ᛁ', quote: 'Pixels are my clay.', desc: 'Motion arts specialist.', img: new URL('./assets/justine.jpg', import.meta.url).href }
 ]
 const nextMember = () => { currentMemberIndex.value = (currentMemberIndex.value + 1) % teamMembers.length }
 const prevMember = () => { currentMemberIndex.value = (currentMemberIndex.value - 1 + teamMembers.length) % teamMembers.length }

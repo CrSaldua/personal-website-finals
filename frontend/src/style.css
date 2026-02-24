@@ -1356,3 +1356,125 @@ input, textarea { background: #000; border: 1px solid #444; color: #fff; padding
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* --- RESPONSIVE OVERRIDES --- */
+
+/* Tablets and Mobile (992px and below) */
+@media (max-width: 992px) {
+  .glow-text {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  
+  .path-container {
+    gap: 40px;
+  }
+
+  .journal-layout {
+    flex-direction: column; /* Stacks Journal Main and Sidebar */
+    gap: 30px;
+  }
+}
+
+/* Small Mobile (768px and below) */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    height: 60vh;
+  }
+  
+  .portrait-frame {
+    width: 140px;
+    height: 140px;
+  }
+
+  .glow-text {
+    font-size: 2.2rem;
+  }
+
+  /* Tabs - Allow horizontal scrolling if they overflow */
+  .tab-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  /* Bestiary Grid */
+  .bestiary-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  /* Combat Arena */
+  .quarry-grid {
+    gap: 10px;
+  }
+  
+  .quarry-card {
+    width: 45%; /* Two cards per row */
+  }
+
+  .combat-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+  
+  .btn-strike, .btn-critical, .btn-dodge, .btn-retreat {
+    width: 100%;
+  }
+
+  /* Team Carousel */
+  .carousel-track {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 20px 10px;
+  }
+  
+  .team-card {
+    flex: 0 0 140px; /* Smaller cards for small screens */
+  }
+
+  /* Notice Board */
+  .contracts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .parchment-note {
+    transform: none !important; /* Remove rotation for better fit */
+  }
+
+  /* World Map */
+  .map-container {
+    padding: 15px;
+  }
+
+  /* Sticky Logo - Already hidden in your CSS, but ensuring it here */
+  .sticky-logo-container {
+    display: none;
+  }
+}
+
+/* Extra Small Phones (480px and below) */
+@media (max-width: 480px) {
+  .glow-text {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .stats-card, .bio-card, .contract-form {
+    padding: 20px;
+  }
+
+  .ap-value {
+    font-size: 1.8rem;
+  }
+}
