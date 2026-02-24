@@ -305,20 +305,38 @@
         <h2 class="meet-team-title">The School</h2>
       </div>
 
-      <div class="carousel-container">
-        <button class="nav-arrow" @click="prevMember"><div class="arrow-circle">‹</div></button>
-       <div 
-  class="carousel-track" 
-  :style="{ transform: `translateX(calc(50% - 90px - (${currentMemberIndex} * 200px)))` }"
->
-  <div 
-    v-for="(member, index) in teamMembers" 
-    :key="member.name" 
-    class="team-card" 
-    :class="{ 'active-team': currentMemberIndex === index }" 
-    @click="currentMemberIndex = index"
-  >
+ <div class="carousel-container">
+  <button class="nav-arrow" @click="prevMember">
+    <div class="arrow-circle">‹</div>
+  </button>
+
+  <div class="carousel-track-wrapper">
+    <div 
+      class="carousel-track" 
+      :style="{ transform: `translateX(calc(50% - 90px - (${currentMemberIndex} * 200px)))` }"
+    >
+      <div 
+        v-for="(member, index) in teamMembers" 
+        :key="member.name" 
+        class="team-card" 
+        :class="{ 'active-team': currentMemberIndex === index }" 
+        @click="currentMemberIndex = index"
+      >
+        <div class="frame-border">
+          <div class="card-img-wrapper">
+            <div class="card-img" :style="{ backgroundImage: 'url(' + member.img + ')' }"></div>
+            <div class="scanline-effect"></div>
+            <div class="skill-rune-tag">{{ member.rune }}</div>
+          </div>
+        </div>
+        <div class="card-label-btn">{{ member.name }}</div>
+      </div>
     </div>
+  </div>
+
+  <button class="nav-arrow" @click="nextMember">
+    <div class="arrow-circle">›</div>
+  </button>
 </div>
 
       <transition name="fade-panel" mode="out-in">
