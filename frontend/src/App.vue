@@ -55,7 +55,7 @@
               </div>
               
             </div>
-          <p>MOVE THE BAR TO CHANGE THE DIFFICULTY</p>
+          <c><p>MOVE THE BAR TO CHANGE THE DIFFICULTY</p></c>
 
             <div class="combat-arena">
               <div class="arena-header">
