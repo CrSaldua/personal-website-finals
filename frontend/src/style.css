@@ -458,23 +458,57 @@ body {
   text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
 }
 
+/* Update these specific classes in your style.css */
+
 .carousel-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  max-width: 1300px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .carousel-track {
   display: flex;
-  gap: 15px;
-  padding: 40px 10px;
-  perspective: 1000px;
-  overflow: visible;
+  gap: 20px;
+  padding: 40px 20px;
+  overflow-x: auto; /* Allows swiping on mobile */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hides scrollbar on Firefox */
+  width: 100%;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Hides scrollbar on Chrome/Safari */
+}
+
+.team-card {
+  flex: 0 0 200px; /* Prevents cards from disappearing/shrinking */
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Ensure the arrows don't get covered */
+.nav-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-100%); /* Moves them up slightly to align with images */
+}
+
+.nav-arrow:first-of-type { left: 5px; }
+.nav-arrow:last-of-type { right: 5px; }
+
+@media (max-width: 768px) {
+  .team-card {
+    flex: 0 0 160px; /* Slightly smaller cards on mobile */
+  }
+  
+  .meet-team-title {
+    font-size: 2rem; /* Shorter title for mobile */
+  }
 }
 
 /* INDIVIDUAL CARDS */
