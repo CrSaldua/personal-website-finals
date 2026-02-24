@@ -5,7 +5,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'https://personal-website-finals-tp54.vercel.app',
-      'https://personal-website-finals-ten-dusky.vercel.app',
+      'personal-website-finals-ten-dusky.vercel.app',
       'http://localhost:5173' 
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
