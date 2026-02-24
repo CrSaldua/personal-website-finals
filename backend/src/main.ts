@@ -4,10 +4,10 @@ async function bootstrap() {
   // Enhanced CORS for Vercel deployment
   app.enableCors({
     origin: [
-      'https://personal-website-finals-tp54.vercel.app',
-      'personal-website-finals-ten-dusky.vercel.app',
-      'http://localhost:5173'
-    ],
+  'https://personal-website-finals-tp54.vercel.app',
+  'https://personal-website-finals-ten-dusky.vercel.app', // Added https://
+  'http://localhost:5173'
+  ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
     allowedHeaders: 'Content-Type, Accept, Authorization',
